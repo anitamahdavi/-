@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#071a2c">
+  <meta name="description" content="دعوت‌نامه مجتمع بزرگ پزشکی مهرآیین">
+  <title>دعوت‌نامه | مجتمع پزشکی مهرآیین</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #071a2c;
+      --panel: #0c2b40;
+      --mint: #65f0d5;
+      --mint-light: #c0fff2;
+      --gold: #f0d4a0;
+      --white: #f4fbff;
+      --muted: #a8c0cf;
+      --border: rgba(192, 236, 241, .15);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: "Vazirmatn", Tahoma, sans-serif;
+      color: var(--white);
+      background:
+        radial-gradient(ellipse at 10% 5%, #25d8bc22, transparent 30%),
+        radial-gradient(ellipse at 90% 80%, #517bff20, transparent 35%),
+        linear-gradient(135deg, #04121f, #071a2c 55%, #0a293b);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: .10;
+      background-image:
+        linear-gradient(#ffffff0c 1px, transparent 1px),
+        linear-gradient(90deg, #ffffff0c 1px, transparent 1px);
+      background-size: 42px 42px;
+    }
+
+    .glow {
+      position: fixed;
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      filter: blur(90px);
+      opacity: .17;
+      pointer-events: none;
+      animation: float 12s ease-in-out infinite alternate;
+    }
+
+    .glow-one {
+      background: #22e5c5;
+      top: -130px;
+      right: -80px;
+    }
+
+    .glow-two {
+      background: #527cff;
+      bottom: -140px;
+      left: -90px;
+      animation-delay: -4s;
+    }
+
+    @keyframes float {
+      to { transform: translate(35px, 30px) scale(1.12); }
+    }
+
+    @keyframes enter {
+      from { opacity: 0; transform: translateY(22px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes pulse {
+      70% { box-shadow: 0 0 0 9px #65f0d500; }
+      100% { box-shadow: 0 0 0 0 #65f0d500; }
+    }
+
+    .container {
+      position: relative;
+      z-index: 1;
+      width: min(1100px, calc(100% - 30px));
+      margin: auto;
+      padding: 25px 0;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 24px;
+      animation: enter .7s both;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo {
+      display: grid;
+      place-items: center;
+      width: 48px;
+      height: 48px;
+      border-radius: 16px;
+      background: linear-gradient(145deg, var(--mint), #baffef);
+      color: #062536;
+      box-shadow: 0 8px 30px #35dbc426;
+      font-size: 27px;
+      font-weight: 800;
+    }
+
+    .brand-name {
+      font-size: 14px;
+      font-weight: 800;
+    }
+
+    .brand-sub {
+      display: block;
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 400;
+      margin-top: 3px;
+    }
+
+    .badge {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      border: 1px solid #65f0d540;
+      background: #ffffff05;
+      color: var(--mint-light);
+      padding: 9px 13px;
+      border-radius: 50px;
+      font-size: 11px;
+      white-space: nowrap;
+    }
+
+    .badge-dot {
+      width: 7px;
+      height: 7px;
+      background: var(--mint);
+      border-radius: 50%;
+      box-shadow: 0 0 0 0 #65f0d577;
+      animation: pulse 2s infinite;
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: clamp(25px, 5.5vw, 65px);
+      border: 1px solid #baffef24;
+      border-radius: 30px;
+      background: linear-gradient(
+        130deg,
+        rgba(15, 53, 73, .96),
+        rgba(6, 25, 42, .97) 60%,
+        rgba(10, 48, 60, .93)
+      );
+      box-shadow: 0 30px 90px #00000036;
+      animation: enter .8s .1s both;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      width: 390px;
+      height: 390px;
+      border: 1px solid #65f0d520;
+      border-radius: 50%;
+      left: -175px;
+      top: -190px;
+      pointer-events: none;
+      box-shadow: 0 0 0 35px #65f0d506,
+                  0 0 0 75px #65f0d505;
+    }
+
+    .eyebrow {
+      color: var(--mint);
+      font-size: 13px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 25px;
+      height: 1px;
+      background: var(--mint);
+    }
+
+    h1 {
+      font-size: clamp(35px, 6vw, 66px);
+      line-height: 1.45;
+      letter-spacing: -1.5px;
+      margin: 20px 0 14px;
+      font-weight: 800;
+    }
+
+    h1 span {
+      color: var(--mint-light);
+      text-shadow: 0 0 35px #65f0d51c;
+    }
+
+    .lead {
+      max-width: 720px;
+      color: #c1d5e0;
+      font-size: clamp(14px, 1.8vw, 17px);
+      line-height: 2.3;
+      font-weight: 300;
+    }
+
+    .ornament {
+      display: flex;
+      align-items: center;
+      gap: 13px;
+      width: min(300px, 85%);
+      margin: 28px 0;
+      color: var(--gold);
+    }
+
+    .ornament::before,
+    .ornament::after {
+      content: "";
+      height: 1px;
+      flex: 1;
+      background: linear-gradient(90deg, transparent, #f0d4a0b3);
+    }
+
+    .ornament::after { transform: rotate(180deg); }
+    .ornament span { font-size: 23px; }
+
+    .invitation {
+      max-width: 800px;
+      color: #e0ebf2;
+      font-size: 14px;
+      line-height: 2.4;
+    }
+
+    .invitation strong { color: var(--mint-light); }
+
+    .section-title {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      margin: 38px 0 17px;
+      font-size: 18px;
+      font-weight: 700;
+    }
+
+    .number {
+      display: grid;
+      place-items: center;
+      width: 33px;
+      height: 33px;
+      flex-shrink: 0;
+      border-radius: 11px;
+      color: var(--mint);
+      background: #65f0d516;
+      font-size: 12px;
+    }
+
+    .details {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 13px;
+    }
+
+    .detail {
+      display: flex;
+      align-items: center;
+      gap: 13px;
+      min-height: 88px;
+      padding: 16px;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      background: #ffffff05;
+      transition: .25s ease;
+    }
+
+    .detail:hover,
+    .service:hover {
+      transform: translateY(-4px);
+      border-color: #65f0d566;
+      background: #65f0d50b;
+    }
+
+    .detail-icon {
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+      width: 42px;
+      height: 42px;
+      border-radius: 13px;
+      background: #65f0d515;
+      color: var(--mint);
+      font-size: 21px;
+    }
+
+    .detail-label {
+      color: #8daabb;
+      font-size: 11px;
+      margin-bottom: 5px;
+    }
+
+    .detail-value {
+      font-size: 13px;
+      font-weight: 600;
+      line-height: 1.8;
+    }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 13px;
+    }
+
+    .service {
+      padding: 20px;
+      border: 1px solid var(--border);
+      border-radius: 19px;
+      background: linear-gradient(145deg, #ffffff08, #ffffff02);
+      transition: .25s ease;
+    }
+
+    .service-icon {
+      display: grid;
+      place-items: center;
+      width: 44px;
+      height: 44px;
+      border-radius: 14px;
+      background: #65f0d515;
+      color: var(--mint);
+      font-size: 23px;
+      margin-bottom: 13px;
+    }
+
+    .service h3 {
+      font-size: 14px;
+      margin-bottom: 8px;
+    }
+
+    .service p {
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 2;
+    }
+
+    .form-panel {
+      margin-top: 42px;
+      padding: clamp(20px, 4vw, 35px);
+      border: 1px solid #65f0d533;
+      border-radius: 25px;
+      background: linear-gradient(145deg, #10354be8, #071d30f5);
+      box-shadow: 0 22px 65px #00000020;
+    }
+
+    .form-intro {
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 2.1;
+      margin-bottom: 24px;
+    }
+
+    form {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .field {
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
+      min-width: 0;
+    }
+
+    .field.full { grid-column: 1 / -1; }
+
+    label {
+      font-size: 12px;
+      color: #e2edf3;
+      font-weight: 500;
+    }
+
+    .required { color: var(--mint); }
+
+    input, select, textarea {
+      display: block;
+      width: 100%;
+      min-width: 0;
+      color: var(--white);
+      background: #041927b8;
+      border: 1px solid #c5e7ed29;
+      border-radius: 12px;
+      padding: 13px 14px;
+      outline: none;
+      font: inherit;
+      font-size: 13px;
+      transition: border-color .2s, box-shadow .2s;
+    }
+
+    input::placeholder, textarea::placeholder { color: #7794a5; }
+
+    input:focus, select:focus, textarea:focus {
+      border-color: #65f0d5b0;
+      box-shadow: 0 0 0 3px #65f0d512;
+    }
+
+    input[type="date"] { color-scheme: dark; }
+    select option { background: #092337; color: white; }
+    textarea { resize: vertical; min-height: 105px; }
+
+    .hint {
+      color: #829dad;
+      font-size: 10px;
+      line-height: 1.8;
+    }
+
+    .checkbox-line {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      color: var(--muted);
+      font-size: 11px;
+      line-height: 1.9;
+    }
+
+    .checkbox-line input {
+      width: 16px;
+      height: 16px;
+      flex-shrink: 0;
+      margin-top: 3px;
+      accent-color: #65f0d5;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    button {
+      border: 0;
+      border-radius: 12px;
+      padding: 13px 22px;
+      font: inherit;
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: transform .2s, filter .2s;
+    }
+
+    button:hover { transform: translateY(-2px); filter: brightness(1.07); }
+
+    .primary {
+      color: #052536;
+      background: linear-gradient(110deg, var(--mint), #b4ffed);
+      box-shadow: 0 8px 25px #35dbc426;
+    }
+
+    .secondary {
+      color: #c7dbe4;
+      background: #ffffff08;
+      border: 1px solid var(--border);
+    }
+
+    .form-message {
+      display: none;
+      padding: 15px;
+      border: 1px solid #65f0d555;
+      border-radius: 13px;
+      color: var(--mint-light);
+      background: #65f0d510;
+      font-size: 12px;
+      line-height: 2;
+      white-space: pre-wrap;
+      overflow-wrap: anywhere;
+    }
+
+    .form-message.show { display: block; animation: enter .3s both; }
+
+    .bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 22px;
+      border-top: 1px solid #ffffff1c;
+      padding-top: 25px;
+      margin-top: 36px;
+    }
+
+    .closing {
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 2;
+    }
+
+    .closing strong {
+      display: block;
+      color: var(--white);
+      font-size: 15px;
+      margin-bottom: 4px;
+    }
+
+    .signature { min-width: 150px; text-align: left; }
+    .signature-label { color: #89a3b3; font-size: 10px; }
+    .signature-name { color: var(--gold); font-size: 17px; font-weight: 700; margin-top: 5px; }
+    .signature-line { height: 1px; width: 90px; margin: 11px 0 0 auto; background: linear-gradient(90deg, var(--gold), transparent); }
+
+    footer {
+      text-align: center;
+      color: #7892a4;
+      font-size: 10px;
+      margin-top: 22px;
+    }
+
+    footer span { color: var(--mint); }
+
+    @media (max-width: 760px) {
+      .container { width: calc(100% - 20px); }
+      header { align-items: flex-start; }
+      .badge { font-size: 10px; padding: 7px 9px; }
+      .hero { padding: 25px 20px; border-radius: 23px; }
+      .details, .services { grid-template-columns: 1fr; }
+      .detail { min-height: 75px; }
+      form { grid-template-columns: 1fr; gap: 15px; }
+      .field.full { grid-column: auto; }
+      .bottom { align-items: flex-start; flex-direction: column; }
+      .signature { text-align: right; }
+      .signature-line { margin: 11px auto 0 0; }
+      .actions button { flex: 1; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="glow glow-one"></div>
+  <div class="glow glow-two"></div>
+
+  <main class="container">
+    <header>
+      <div class="brand">
+        <div class="logo" aria-hidden="true">✚</div>
+        <div class="brand-name">
+          مجتمع پزشکی مهرآیین
+          <span class="brand-sub">همراه سلامتی، هم‌قدم زندگی</span>
+        </div>
+      </div>
+      <div class="badge"><span class="badge-dot"></span> دعوت‌نامه رسمی</div>
+    </header>
+
+    <section class="hero">
+      <div class="eyebrow">دعوتی برای فردایی سالم‌تر</div>
+      <h1>سلامت، با هم<br><span>معنای تازه‌ای دارد.</span></h1>
+      <p class="lead">
+        با افتخار شما را به آغاز تجربه‌ای نو در مسیر تندرستی دعوت می‌کنیم؛
+        جایی که دانش پزشکی، همراهی متخصصان و توجه به انسان در کنار یکدیگر قرار می‌گیرند.
+      </p>
+
+      <div class="ornament" aria-hidden="true"><span>✧</span></div>
+
+      <div class="invitation">
+        <p>مدعو گرامی،</p>
+        <p>
+          از شما دعوت می‌کنیم در <strong>آیین افتتاح و معرفی مجتمع بزرگ پزشکی مهرآیین</strong>
+          همراه ما باشید. این مجموعه با نگاهی انسان‌محور و با هدف فراهم‌کردن فضایی
+          حرفه‌ای، آرام و قابل اعتماد برای دریافت خدمات سلامت شکل گرفته است.
+        </p>
+        <p>
+          حضور شما برای ما ارزشمند است و می‌تواند آغازگر فصلی تازه از همکاری، امید
+          و توجه به ارزشمندترین دارایی انسان، یعنی سلامتی، باشد.
+        </p>
+      </div>
+
+      <div class="section-title"><span class="number">۰۱</span> اطلاعات مراسم</div>
+      <div class="details">
+        <div class="detail">
+          <div class="detail-icon">▦</div>
+          <div><div class="detail-label">تاریخ و زمان</div><div class="detail-value">به‌زودی اعلام می‌شود</div></div>
+        </div>
+        <div class="detail">
+          <div class="detail-icon">⌖</div>
+          <div><div class="detail-label">محل برگزاری</div><div class="detail-value">مجتمع پزشکی مهرآیین</div></div>
+        </div>
+        <div class="detail">
+          <div class="detail-icon">✚</div>
+          <div><div class="detail-label">هدف رویداد</div><div class="detail-value">آغاز مسیری نو در سلامت</div></div>
+        </div>
+      </div>
+
+      <div class="section-title"><span class="number">۰۲</span> خدمات و حوزه‌های فعالیت</div>
+      <div class="services">
+        <article class="service">
+          <div class="service-icon">✚</div>
+          <h3>خدمات تخصصی پزشکی</h3>
+          <p>فضایی برای ارائه خدمات تشخیصی و درمانی با همراهی کادر حرفه‌ای.</p>
+        </article>
+        <article class="service">
+          <div class="service-icon">⌁</div>
+          <h3>مشاوره و راهنمایی سلامت</h3>
+          <p>توجه به نیازهای مراجعه‌کنندگان و راهنمایی در مسیر مراقبت از سلامت.</p>
+        </article>
+        <article class="service">
+          <div class="service-icon">✧</div>
+          <h3>همکاری حرفه‌ای</h3>
+          <p>فرصتی برای آشنایی، تعامل و توسعه همکاری‌های تخصصی و سازمانی.</p>
+        </article>
+      </div>
+
+      <section class="form-panel" aria-labelledby="form-title">
+        <div class="section-title" id="form-title" style="margin-top:0">
+          <span class="number">۰۳</span> فرم ثبت اطلاعات و حضور
+        </div>
+        <p class="form-intro">
+          برای اعلام وضعیت حضور یا درخواست اطلاعات بیشتر، فرم زیر را تکمیل کنید.
+          فیلدهای دارای ستاره الزامی هستند.
+        </p>
+
+        <form id="inviteForm">
+          <div class="field">
+            <label for="fullName">نام و نام خانوادگی <span class="required">*</span></label>
+            <input id="fullName" name="fullName" type="text" placeholder="نام کامل خود را وارد کنید" autocomplete="name" required>
+          </div>
+
+          <div class="field">
+            <label for="role">سمت یا عنوان شغلی</label>
+            <input id="role" name="role" type="text" placeholder="مثلاً پزشک، مهمان یا همکار">
+          </div>
+
+          <div class="field">
+            <label for="eventDate">تاریخ موردنظر</label>
+            <input id="eventDate" name="eventDate" type="date">
+            <span class="hint">تاریخ نهایی مراسم باید توسط برگزارکننده اعلام شود.</span>
+          </div>
+
+          <div class="field">
+            <label for="attendance">وضعیت حضور <span class="required">*</span></label>
+            <select id="attendance" name="attendance" required>
+              <option value="">یک گزینه انتخاب کنید</option>
+              <option value="حضور خواهم داشت">با کمال میل شرکت می‌کنم</option>
+              <option value="نیازمند اطلاعات بیشتر">لطفاً اطلاعات بیشتری ارسال کنید</option>
+              <option value="امکان حضور ندارم">فعلاً امکان حضور ندارم</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="service">خدمات موردعلاقه</label>
+            <select id="service" name="service">
+              <option value="">انتخاب خدمات (اختیاری)</option>
+              <option>خدمات تخصصی پزشکی</option>
+              <option>مشاوره و راهنمایی سلامت</option>
+              <option>همکاری حرفه‌ای و سازمانی</option>
+              <option>آشنایی با مجموعه</option>
+              <option>سایر موارد</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="contact">راه ارتباطی</label>
+            <input id="contact" name="contact" type="text" placeholder="ایمیل یا شماره تماس">
+            <span class="hint">واردکردن اطلاعات تماس اختیاری است.</span>
+          </div>
+
+          <div class="field full">
+            <label for="message">پیام یا توضیحات</label>
+            <textarea id="message" name="message" placeholder="اگر نکته یا درخواستی دارید، اینجا بنویسید..."></textarea>
+          </div>
+
+          <div class="field full">
+            <label class="checkbox-line">
+              <input id="confirm" type="checkbox" required>
+              <span>تأیید می‌کنم فرم را آگاهانه تکمیل کرده‌ام. <span class="required">*</span></span>
+            </label>
+          </div>
+
+          <div class="field full">
+            <div class="actions">
+              <button class="primary" type="submit">ثبت اطلاعات فرم</button>
+              <button class="secondary" type="reset">پاک‌کردن فرم</button>
+            </div>
+          </div>
+
+          <div class="field full">
+            <div id="formMessage" class="form-message" role="status" aria-live="polite"></div>
+            <span class="hint">
+              نسخه نمایشی: اطلاعات به سرور ارسال یا به‌صورت دائمی ذخیره نمی‌شوند.
+              برای ثبت واقعی درخواست‌ها باید فرم به سرویس ثبت اطلاعات متصل شود.
+            </span>
+          </div>
+        </form>
+      </section>
+
+      <div class="bottom">
+        <div class="closing">
+          <strong>به امید دیدار شما</strong>
+          از اینکه در این آغاز ارزشمند همراه ما هستید، سپاسگزاریم.
+        </div>
+        <div class="signature">
+          <div class="signature-label">طراح و نویسنده</div>
+          <div class="signature-name">آنیتا مهدوی</div>
+          <div class="signature-line"></div>
+        </div>
+      </div>
+    </section>
+
+    <footer>با احترام و آرزوی تندرستی برای همگان <span>✦</span> مجتمع پزشکی مهرآیین</footer>
+  </main>
+
+  <script>
+    const form = document.getElementById("inviteForm");
+    const result = document.getElementById("formMessage");
+
+    form.addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      if (!form.reportValidity()) return;
+
+      const data = new FormData(form);
+      const name = String(data.get("fullName") || "").trim();
+      const attendance = String(data.get("attendance") || "");
+      const date = String(data.get("eventDate") || "انتخاب نشده");
+      const service = String(data.get("service") || "انتخاب نشده");
+
+      result.textContent =
+        `سپاس از شما، ${name} عزیز!\n` +
+        `وضعیت حضور: ${attendance}\n` +
+        `تاریخ انتخاب‌شده: ${date}\n` +
+        `خدمات موردعلاقه: ${service}\n\n` +
+        `این پیام صرفاً تأیید نمایشی فرم است؛ اطلاعات هنوز در سرور ذخیره نشده‌اند.`;
+
+      result.classList.add("show");
+      result.scrollIntoView({ behavior: "smooth", block: "nearest" });
+    });
+
+    form.addEventListener("reset", function () {
+      result.classList.remove("show");
+      result.textContent = "";
+    });
+  </script>
+</body>
+</html>
